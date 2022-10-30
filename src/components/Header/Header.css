@@ -1,0 +1,12 @@
+.Header {
+  margin: 50px;
+  color: gold;
+}
+
+h1 > span {
+  color: black;
+}
+
+h3 {
+  color: grey;
+}
