@@ -1,3 +1,12 @@
 .NewWorkout {
   display: grid;
+  /* padding: 20px; */
+}
+
+span {
+  color: rgb(89, 88, 88);
+}
+
+.Section {
+  padding: 10px;
 }

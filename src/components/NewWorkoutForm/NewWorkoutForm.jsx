@@ -12,7 +12,7 @@ export default class NewWorkoutForm extends Component {
   render() {
     return (
       <div className="NewWorkout">
-        <div>
+        <div className="Section">
           <span>Workout Type: </span>
             <input
               name="workout"
@@ -20,7 +20,7 @@ export default class NewWorkoutForm extends Component {
               requiredpattern=".{2,}"
             />
         </div>
-        <div>
+        <div className="Section">
           <span>Number of Reps: </span>
             <input 
               name="repetitions"
@@ -29,7 +29,7 @@ export default class NewWorkoutForm extends Component {
               pattern=".{2,}"
             />
         </div>
-        <div>
+        <div className="Section">
           <span>Duration (in minutes): </span>
             <input 
               name="duration"
@@ -38,6 +38,7 @@ export default class NewWorkoutForm extends Component {
               pattern=".{2,}"
             />
         </div>
+        <button>Get Results</button>
       </div>
     )
   }
