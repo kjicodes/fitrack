@@ -1,0 +1,33 @@
+.Home {
+  padding: 20px;
+}
+
+.Home h3 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.Home ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.Home li {
+  padding: 20px;
+}
+
+.Home img {
+  width: 80px;
+}
+
+.Home a {
+  background-color: gold;
+  color: black;
+}
+
+.Home a:hover {
+  background-color: gold;
+  color: white;
+}

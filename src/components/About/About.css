@@ -1,0 +1,26 @@
+.About {
+  margin: 20px 100px 0 100px;
+}
+
+.About h2 {
+  text-decoration: underline gold;
+}
+
+.About h3 {
+  padding: 30px;
+}
+
+.About h2 > span, h3 > span, #fit {
+  color: gold;
+}
+
+.About p {
+  padding: 10px;
+  font-size: 20px;
+  line-height: 1.5;
+  color: grey;
+}
+
+#track {
+  color: black;
+}

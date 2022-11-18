@@ -1,12 +1,13 @@
 .Header {
-  margin: 50px;
-  color: gold;
-}
-
-h1 > span {
-  color: black;
-}
-
-h3 {
+  margin: 20px;
+  text-align: center;
   color: grey;
 }
+
+.Header img {
+  width: 400px;
+  height: auto;
+  background-color: white;
+}
+
+

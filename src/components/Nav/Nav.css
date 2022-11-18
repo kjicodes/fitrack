@@ -1,6 +1,18 @@
-.Nav {
-  margin: 0;
-  background-color: beige;
-  padding: 20px;
-  color: rgb(100, 99, 99);
+.nav-wrapper {
+  background-color: rgb(51, 51, 51);
+}
+
+.nav-wrapper ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-wrapper a {
+  color: gold;
+}
+
+.nav-wrapper a:hover {
+  background-color: gold;
+  color: black;
 }
