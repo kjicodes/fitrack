@@ -1,6 +1,6 @@
 # FITRACK
 
-*FITRACK* is a wellness tracking web application that returns data based on the type of workout performed, number of repetitions, and duration.  
+*FITRACK* is a fitness diary web application that allows users to record their daily workouts.  
 
 ## Technologies Used
 
