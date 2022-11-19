@@ -1,10 +1,15 @@
 .Home {
   padding: 20px;
+  text-align: center;
 }
 
-.Home h3 {
-  font-size: 20px;
+.Home h3 { 
+  font-size: 35px;
   font-weight: bold;
+}
+
+.Home h3 > span {
+  color: gold;
 }
 
 .Home ul {

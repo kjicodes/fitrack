@@ -13,13 +13,13 @@ export default function Home() {
       <h3>Track your way to optimal <span>health.</span></h3>
       <div>
         <ul>
-          <li><img src={Schedule} /></li>
-          <li><img src={Workout} /></li>
-          <li><img src={WeightLifting} /></li>
-          <li><img src={Lunges} /></li>
-          <li><img src={Yoga} /></li>
-          <li><img src={Team} /></li>
-          <li><img src={Health} /></li>
+          <li><img src={Schedule} alt="Schedule" /></li>
+          <li><img src={Workout} alt="Workout"/></li>
+          <li><img src={WeightLifting} alt="WeightLifting"/></li>
+          <li><img src={Lunges} alt="Lunges"/></li>
+          <li><img src={Yoga} alt="Yoga"/></li>
+          <li><img src={Team} alt="Team"/></li>
+          <li><img src={Health} alt="Health" /></li>
         </ul>
       </div>
       <a className="waves-effect waves-light btn">Start Tracking</a>

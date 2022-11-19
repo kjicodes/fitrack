@@ -1,46 +1,24 @@
 .NewWorkout {
- margin: 10px;
  display: flex;
- justify-content: space-around;
+ padding: 20px;
 }
 
 .NewWorkout h2, h3 {
   text-decoration: underline gold;
-  text-align: center;
-}
-
-.NewWorkout form {
-  padding: 5px;
+  text-align: left;
 }
 
 .NewWorkout label {
-  display: flex;
-  align-items: center;
-  margin-top: 0.5rem;
-  text-align: right;
-  color: grey;
-  
-}
-
-.NewWorkout label > span {
-  width: 9rem;
-  padding: 5px; 
-}
-
-.NewWorkout input, select, textarea {
-  width: 100%;
-  height: auto;
-  font-size: 1rem;
   font-weight: bold;
-  padding: 0.4rem;
-  border: 2px solid black;
-  border-radius: 5px;
-  outline: none;
-  text-decoration: none;
 }
 
-.Workout {
-  padding: 10px;
+.Section {
+  margin: 0 50px;
+  padding: 20px;
+}
+
+#date {
+  font-weight: bold;
 }
 
 #divider {

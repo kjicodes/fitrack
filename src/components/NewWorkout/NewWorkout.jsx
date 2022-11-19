@@ -4,11 +4,13 @@ import "react-datepicker/dist/react-datepicker.css";
 import DatePicker from 'react-datepicker';
 
 
+
 export default class NewWorkout extends Component {
 
   state = {
     workouts: [],
-    date: new Date(),
+    startDate: new Date(),
+    time: "",
     type: "",
     duration: "",
     comment: ""
@@ -18,11 +20,16 @@ export default class NewWorkout extends Component {
     this.setState({ [e.target.name]: e.target.value })
   };
 
+  handleChangeDate = date => {
+    this.setState({ startDate: date })
+  };
+
   addWorkout = e => {
     e.preventDefault();
 
     let newWorkout = {
-      date: this.state.date,
+      startDate: this.state.startDate,
+      time: this.state.time,
       type: this.state.type,
       duration: this.state.duration,
       comment: this.state.comment
@@ -30,7 +37,8 @@ export default class NewWorkout extends Component {
 
     this.setState({
       workouts: [...this.state.workouts, newWorkout],
-      date: "",
+      startDate: "",
+      time: "",
       type: "",
       duration: "",
       comment: ""
@@ -41,62 +49,78 @@ export default class NewWorkout extends Component {
     return (
       <div className="NewWorkout">
         <div className="Section">
-          <h2>My Workouts</h2>
-          {this.state.workouts.map((w) => (
-            <div>
-              <div>{w.date}</div> <div>{w.type}</div> <div>{w.duration}</div> <div>{w.comment}</div>
-            </div>
-          ))}
-        </div>
-        <div id="divider"></div>
-        <div className="Section">
-          <h3>New Workout</h3>
+          <h3>Enter New Workout</h3>
           <form onSubmit={this.addWorkout}>
-            <label>
-              <span>DATE </span>
-              <input
-                name="date"
-                value={this.state.date}
-                onChange={this.handleChange}
+            <div>
+              <label>DATE </label>
+              <DatePicker
+                id="date"
+                name="startDate"
+                selected={this.state.startDate}
+                dateFormat="dd/MM/yyyy"
+                popperPlacement="bottom-end"
+                onChange={this.handleChangeDate}
                 required
-                pattern=".{2,}"
               />
-            </label>
-            <label>
-              <span>WORKOUT </span>
+            </div>
+            <div>
+              <label>WHEN </label>
+              <input 
+                name="time"
+                type="time"
+                value={this.state.time}
+                onChange={this.handleChange}
+              />
+            </div>
+            <div>
+              <label>WORKOUT </label>
               <input 
                 name="type"
                 value={this.state.type}
                 onChange={this.handleChange}
+                placeholder="Enter type"
                 required
                 pattern=".{2,}"
               />
-            </label>
-            <label>
-              <span>DURATION (mins) </span>
+            </div>
+            <div>
+              <label>DURATION </label>
               <input 
                 name="duration"
+                type="number"
                 value={this.state.duration}
                 onChange={this.handleChange}
+                placeholder="Enter in minutes"
                 required
                 pattern=".{2,}"
               />
-            </label>
-            <label>
-              <span>GOALS FOR NEXT TIME </span>
+            </div>
+            <div>
+              <label>GOALS FOR NEXT TIME </label>
+              <br />
               <textarea
                 name="comment"
                 value={this.state.comment}
                 onChange={this.handleChange}
+                placeholder="What's next?"
                 required
                 pattern=".{2,}"            
               />
-            </label>
+            </div>
             <br />
             <div id="btn">
               <button>Add Workout</button>
             </div>
           </form>
+        </div>
+        <div id="divider"></div>
+        <div className="Section">
+          <h2>My Workouts</h2>
+          {this.state.workouts.map((w) => (
+            <div>
+              <div>{w.startDate}</div> <div>{w.type}</div> <div>{w.duration}</div> <div>{w.comment}</div>
+            </div>
+          ))}
         </div>
       </div>
     )
