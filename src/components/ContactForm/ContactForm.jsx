@@ -1,43 +1,77 @@
+import { Component } from 'react';
 import './ContactForm.css';
-import Card from 'react-bootstrap/Card';
 
-export default function ContactForm() {
+export default class ContactForm extends Component {
 
-  return (
-    <div className="Contact">
-      <div className="Section">
-        <Card>
-          <Card.Img variant="top" src="" />
-          <Card.Body>
-            <Card.Title>
-              <h3>Kateleen Issa</h3>
-            </Card.Title>
-            <Card.Text>
-              <p>Founder | Software Developer</p>
-            </Card.Text>
-          </Card.Body>
-        </Card>
-      </div>
-      <div className="Section">
+  state = {
+    name: "",
+    email: "",
+    message: ""
+  }
+
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value
+    })
+  };
+
+  handleSubmit = async () => {
+    let body = { 
+      name: this.state.name,
+      email: this.state.email,
+      message: this.state.message
+    };
+
+    let options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(body)
+    };
+
+    await fetch("/api", options)
+      .then(res => res.json())
+      .then(data => {
+        this.props.getContacts();
+        this.setState({ 
+          name: "",
+          email: "",
+          message: ""
+        })
+      })
+  }
+
+  render() {
+    return (
+      <div className="ContactForm">
         <h2>Contact Us</h2>
-        <form>
+        <div>
           <input 
             name="name"
             type="text"
+            value={this.state.name}
+            onChange={this.handleChange}
             placeholder="Enter Name"
           />
           <input
             name="email"
             type="text"
+            value={this.state.email}
+            onChange={this.handleChange}
             placeholder="Enter Email"
           />
           <input 
             name="message"
             type="text"
+            value={this.state.message}
+            onChange={this.handleChange}
             placeholder="Enter Message"
           />
-        </form>
+        </div>
+        <div>
+          <button className="waves-effect waves-light btn" onClick={this.handleSubmit}>Submit</button>
+        </div>
       </div>
-    </div>
-  )
+    )
+  }
 };

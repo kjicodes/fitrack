@@ -1,0 +1,11 @@
+.ContactPage {
+  margin: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+} 
+
+.ContactSections {
+  padding: 0 40px;
+}

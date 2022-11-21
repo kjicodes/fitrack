@@ -1,0 +1,24 @@
+.ContactProfile #div1 {
+  width: 350px;
+  height: auto;
+  padding: 20px;
+}
+
+.ContactProfile img {
+  width: 100px;
+  height: auto;
+  text-align: center;
+}
+
+.ContactProfile h3 {
+  font-size: 30px;
+}
+
+.ContactProfile p {
+  color: grey;
+}
+
+.ContactProfile #contact-github {
+  width: 30px;
+  height: auto;
+}

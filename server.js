@@ -15,6 +15,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 
 app.use('/api', require('./routes/workouts'));
+app.use('/api/contacts', require('./routes/contacts'))
 
 // Place 'catch all' routes under mounted routes
 app.get('/*', function(req, res) {
