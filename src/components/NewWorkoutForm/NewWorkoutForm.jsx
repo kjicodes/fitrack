@@ -11,10 +11,10 @@ export default class NewWorkoutForm extends Component {
     type: "",
     duration: "",
     comment: ""
-  }
+  };
 
   handleChange = e => {
-    this.setState({ [e.target.name]: e.target.value}) // computed property syntax
+    this.setState({ [e.target.name]: e.target.value}) // [] - computed property syntax
   };
 
   handleDateChange = date => {
@@ -22,15 +22,14 @@ export default class NewWorkoutForm extends Component {
   };
 
   handleSubmit = async () => {
-    // First we build the body
     let body = { 
       startDate: this.state.startDate,
       time: this.state.time,
       type: this.state.type,
       duration: this.state.duration,
       comment: this.state.comment
-    }
-    // We need an options object for our fetch call
+    };
+
     let options = {
       method: "POST",
       headers: {
@@ -38,11 +37,11 @@ export default class NewWorkoutForm extends Component {
       },
       body: JSON.stringify(body)
     };
+
     await fetch("/api", options)
       .then(res => res.json())
       .then(data => {
-        // this.getWorkouts();
-        // clear out this.state.content
+        this.props.getWorkouts();
         this.setState({ 
           startDate: "",
           time: "",
@@ -59,6 +58,7 @@ export default class NewWorkoutForm extends Component {
         <div>
           <label>DATE </label>
           <DatePicker
+            wrapperClassName="datePicker"
             name="startDate"
             selected={this.state.startDate}
             dateFormat="dd/MM/yyyy"
@@ -103,6 +103,7 @@ export default class NewWorkoutForm extends Component {
           <label>GOALS FOR NEXT TIME </label>
           <br />
           <textarea
+            className="materialize-textarea"
             name="comment"
             value={this.state.comment}
             onChange={this.handleChange}

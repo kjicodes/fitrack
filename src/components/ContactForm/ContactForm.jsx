@@ -1,7 +1,7 @@
-import './Contact.css';
+import './ContactForm.css';
 import Card from 'react-bootstrap/Card';
 
-export default function Contact() {
+export default function ContactForm() {
 
   return (
     <div className="Contact">

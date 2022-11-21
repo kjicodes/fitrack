@@ -11,7 +11,7 @@ export default class WorkoutsPage extends Component {
   };
 
   getWorkouts = async () => {
-    await fetch("/api") // fetch call, fetches data
+    await fetch("/api") // fetch call
     .then(res => res.json()) // initial fetch then returns a response obj (res), then we call json on it which will PULL the json body out of our response
     .then(workouts => this.setState({ workouts })) // then data we get back (workouts)
   };
@@ -27,17 +27,17 @@ export default class WorkoutsPage extends Component {
       <div className="WorkoutsPage">
         <div className="Section">
           <h3>Enter</h3>
-          <NewWorkoutForm />
+          <NewWorkoutForm getWorkouts={this.getWorkouts} />
         </div>
         <div id="divider"></div>
         <div className="Section">
           <h2>My Workouts</h2>
-          {this.state.workouts.map((w, idx) => (
-            <NewWorkoutPost 
-              key={idx}
-              workout={w}
-            />
-          ))}
+          {this.state.workouts.length ?
+            this.state.workouts.map((w, idx) => (
+              <NewWorkoutPost key={idx} workout={w} />))
+            :
+            <h4>No Workouts</h4>
+          }
         </div>
       </div>
     )

@@ -13,7 +13,9 @@
   padding: 30px;
 }
 
-.About h2 > span, h3 > span, #fit {
+.About h2 > span, 
+.About h3 > span,
+#fit {
   color: gold;
 }
 
