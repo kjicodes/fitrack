@@ -1,0 +1,18 @@
+.NewWorkoutForm label {
+  font-weight: bold;
+}
+
+#add-btn {
+  text-align: center;
+}
+
+.btn {
+background-color: gold;
+color: black;
+}
+
+.btn:hover {
+background-color: gold;
+color: white;
+}
+

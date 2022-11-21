@@ -1,31 +1,28 @@
 .WorkoutsPage {
   display: flex;
+  padding: 5px;
+ }
+ 
+.WorkoutsPage div > h2, div > h3 {
+  text-decoration: underline gold;
+  text-align: left;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.Section {
+  margin: 0 50px;
   padding: 20px;
- }
- 
- .WorkoutsPage h2 h3 {
-   text-decoration: underline gold;
-   text-align: left;
- }
- 
- .WorkoutsPage label {
-   font-weight: bold;
- }
- 
- .Section {
-   margin: 0 50px;
-   padding: 20px;
- }
- 
- #date {
-   font-weight: bold;
- }
- 
- #divider {
-   margin-top: 10px;
-   border-left: 3px solid black;
- }
- 
- #btn {
-   text-align: center;
- }
+}
+
+#divider {
+  margin-top: 10px;
+  border-left: 2px solid grey;
+}
+
+
+
+
+
+
+

@@ -4,8 +4,9 @@
 }
 
 .Home h3 { 
-  font-size: 35px;
+  font-size: 25px;
   font-weight: bold;
+  text-align: center;
 }
 
 .Home h3 > span {

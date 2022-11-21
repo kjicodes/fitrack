@@ -1,9 +1,12 @@
 .About {
-  margin: 20px 100px 0 100px;
+  margin: 20px 200px 0 200px;
+  text-align: center;
 }
 
 .About h2 {
   text-decoration: underline gold;
+  font-weight: bold;
+  font-size: 30px;
 }
 
 .About h3 {

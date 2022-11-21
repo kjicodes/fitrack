@@ -1,123 +1,42 @@
 import { Component } from 'react';
 import './WorkoutsPage.css';
-import "react-datepicker/dist/react-datepicker.css";
-import DatePicker from 'react-datepicker';
+
+import NewWorkoutPost from '../../components/NewWorkoutPost/NewWorkoutPost';
+import NewWorkoutForm from '../../components/NewWorkoutForm/NewWorkoutForm';
 
 export default class WorkoutsPage extends Component {
 
   state = {
-    workouts: [],
-    startDate: new Date(),
-    time: "",
-    type: "",
-    duration: "",
-    comment: ""
+    workouts: []
   };
 
-  handleChange = e => {
-    this.setState({ [e.target.name]: e.target.value })
+  getWorkouts = async () => {
+    await fetch("/api") // fetch call, fetches data
+    .then(res => res.json()) // initial fetch then returns a response obj (res), then we call json on it which will PULL the json body out of our response
+    .then(workouts => this.setState({ workouts })) // then data we get back (workouts)
   };
 
-  handleChangeDate = date => {
-    this.setState({ startDate: date })
-  };
-
-  addWorkout = e => {
-    e.preventDefault();
-
-    let newWorkout = {
-      startDate: this.state.startDate,
-      time: this.state.time,
-      type: this.state.type,
-      duration: this.state.duration,
-      comment: this.state.comment
-    };
-
-    this.setState({
-      workouts: [...this.state.workouts, newWorkout],
-      startDate: "",
-      time: "",
-      type: "",
-      duration: "",
-      comment: ""
-    });
+  // need to call getWorkouts()
+  // once component mounts, then we can fetch data from db
+  componentDidMount() {
+    this.getWorkouts()
   };
 
   render() {
     return (
       <div className="WorkoutsPage">
         <div className="Section">
-          <h3>Enter New Workout</h3>
-          <form onSubmit={this.addWorkout}>
-            <div>
-              <label>DATE </label>
-              <DatePicker
-                id="date"
-                name="startDate"
-                selected={this.state.startDate}
-                dateFormat="dd/MM/yyyy"
-                popperPlacement="bottom-end"
-                onChange={this.handleChangeDate}
-                required
-              />
-            </div>
-            <div>
-              <label>WHEN </label>
-              <input 
-                name="time"
-                type="time"
-                value={this.state.time}
-                onChange={this.handleChange}
-              />
-            </div>
-            <div>
-              <label>WORKOUT </label>
-              <input 
-                name="type"
-                value={this.state.type}
-                onChange={this.handleChange}
-                placeholder="Enter type"
-                required
-                pattern=".{2,}"
-              />
-            </div>
-            <div>
-              <label>DURATION </label>
-              <input 
-                name="duration"
-                type="number"
-                value={this.state.duration}
-                onChange={this.handleChange}
-                placeholder="Enter in minutes"
-                required
-                pattern=".{2,}"
-              />
-            </div>
-            <div>
-              <label>GOALS FOR NEXT TIME </label>
-              <br />
-              <textarea
-                name="comment"
-                value={this.state.comment}
-                onChange={this.handleChange}
-                placeholder="What's next?"
-                required
-                pattern=".{2,}"            
-              />
-            </div>
-            <br />
-            <div id="btn">
-              <button>Add Workout</button>
-            </div>
-          </form>
+          <h3>Enter</h3>
+          <NewWorkoutForm />
         </div>
         <div id="divider"></div>
         <div className="Section">
           <h2>My Workouts</h2>
-          {this.state.workouts.map((w) => (
-            <div>
-              <div>{w.startDate}</div> <div>{w.type}</div> <div>{w.duration}</div> <div>{w.comment}</div>
-            </div>
+          {this.state.workouts.map((w, idx) => (
+            <NewWorkoutPost 
+              key={idx}
+              workout={w}
+            />
           ))}
         </div>
       </div>

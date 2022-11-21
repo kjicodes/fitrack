@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import 'materialize-css/dist/css/materialize.min.css';
 import './Nav.css';
 
@@ -6,17 +7,17 @@ export default function Nav() {
     <nav>
       <div className="nav-wrapper">
         <ul className="center hide-on-med-and-down">
-          <li>
-            <a href="">WORKOUTS</a>
+        <li>
+            <NavLink to="/home">HOME</NavLink>
           </li>
           <li>
-            <a href="">ABOUT</a>
+            <NavLink to="/myworkouts">WORKOUTS</NavLink>
           </li>
           <li>
-            <a href="">HOME</a>
+            <NavLink to="/about">ABOUT</NavLink>
           </li>
           <li>
-            <a href="">CONTACT</a>
+            <NavLink to="/contact">CONTACT</NavLink>
           </li>
         </ul>
       </div>

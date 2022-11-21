@@ -1,0 +1,12 @@
+.Contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.Section h2 {
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: underline gold;
+}
