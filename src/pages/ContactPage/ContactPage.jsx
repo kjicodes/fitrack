@@ -1,6 +1,8 @@
 import { Component } from 'react';
 import './ContactPage.css';
 
+import Header from '../../components/Header/Header';
+import Nav from '../../components/Nav/Nav';
 import ContactProfile from '../../components/ContactProfile/ContactProfile';
 import ContactForm from '../../components/ContactForm/ContactForm';
 
@@ -22,12 +24,16 @@ export default class ContactPage extends Component {
 
   render() {
     return (
-      <div className="ContactPage">
-        <div className="ContactSections">
-          <ContactProfile />
-        </div>
-        <div className="ContactSections">
-          <ContactForm getContacts={this.getContacts} />
+      <div>
+        <Header />
+        <Nav />
+        <div className="ContactPage">
+          <div className="ContactSections">
+            <ContactProfile />
+          </div>
+          <div className="ContactSections">
+            <ContactForm getContacts={this.getContacts} />
+          </div>
         </div>
       </div>
     )

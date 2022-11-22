@@ -23,7 +23,7 @@ export default function Home() {
           <li><img src={Health} alt="Health" /></li>
         </ul>
       </div>
-      <Link className="waves-effect waves-light btn" to="/myworkouts">Start Tracking</Link>
+      <Link className="waves-effect waves-light btn" to="/workouts">Start Tracking</Link>
     </div>
   )
 }

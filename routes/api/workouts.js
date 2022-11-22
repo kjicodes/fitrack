@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const workoutCtrl = require('../controllers/workouts');
+const workoutCtrl = require('../../controllers/workouts');
 
-// GET all posts
+// GET all workouts
 router.get('/', workoutCtrl.index)
 
-// POST new post
+// POST new workout
 router.post('/', workoutCtrl.create)
 
 module.exports = router;
