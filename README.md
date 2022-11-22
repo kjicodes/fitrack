@@ -15,3 +15,8 @@
 - CSS
 
 
+Currently working on the app to:
+
+- Add user authentication
+
+
