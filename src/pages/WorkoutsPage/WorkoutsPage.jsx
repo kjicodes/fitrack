@@ -13,7 +13,7 @@ export default class WorkoutsPage extends Component {
   };
 
   getWorkouts = async () => {
-    await fetch("/api") // fetch call
+    await fetch("/api/workouts") // fetch call
     .then(res => res.json()) // initial fetch then returns a response obj (res), then we call json on it which will PULL the json body out of our response
     .then(workouts => this.setState({ workouts })) // then data we get back (workouts)
   };

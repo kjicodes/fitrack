@@ -25,7 +25,7 @@ export default class App extends Component {
             <Route path="/" element={<HomePage />} />
             <Route path="/workouts" element={<WorkoutsPage />} />
             <Route path="/about" element={<AboutPage />} />
-            <Route path="/contacts" element={<ContactPage />} />
+            <Route path="/contact" element={<ContactPage />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
       </main>

@@ -13,8 +13,8 @@ app.use(express.json());
 app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'build')));
 
-app.use('/api/contacts', require('./routes/api/contacts'))
-app.use('/api', require('./routes/api/workouts'));
+app.use('/api/workouts', require('./routes/api/workouts'));
+app.use('/api/contact', require('./routes/api/contacts'))
 
 // Place 'catch all' routes under mounted routes
 app.get('/*', function(req, res) {

@@ -29,7 +29,7 @@ export default class ContactForm extends Component {
       body: JSON.stringify(body)
     };
 
-    await fetch("/api", options)
+    await fetch("/api/contact", options)
       .then(res => res.json())
       .then(data => {
         this.props.getContacts();

@@ -1,5 +1,4 @@
 import { NavLink } from 'react-router-dom';
-import 'materialize-css/dist/css/materialize.min.css';
 import './Nav.css';
 
 export default function Nav() {
@@ -17,7 +16,7 @@ export default function Nav() {
             <NavLink to="/about">ABOUT</NavLink>
           </li>
           <li>
-            <NavLink to="/contacts">CONTACT</NavLink>
+            <NavLink to="/contact">CONTACT</NavLink>
           </li>
         </ul>
       </div>

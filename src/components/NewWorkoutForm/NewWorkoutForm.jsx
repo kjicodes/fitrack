@@ -38,7 +38,7 @@ export default class NewWorkoutForm extends Component {
       body: JSON.stringify(body)
     };
 
-    await fetch("/api", options)
+    await fetch("/api/workouts", options)
       .then(res => res.json())
       .then(data => {
         this.props.getWorkouts();

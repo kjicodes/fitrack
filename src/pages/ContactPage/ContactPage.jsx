@@ -13,7 +13,7 @@ export default class ContactPage extends Component {
   };
 
   getContacts = async () => {
-    await fetch("/api")
+    await fetch("/api/contact")
     .then(res => res.json())
     .then(messages => this.setState({ messages }))
   };
