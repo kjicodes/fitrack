@@ -20,11 +20,11 @@ export default class ContactPage extends Component {
 
   componentDidMount() {
     this.getContacts()
-  }
+  };
 
   render() {
     return (
-      <div>
+      <main>
         <Header />
         <Nav />
         <div className="ContactPage">
@@ -35,7 +35,7 @@ export default class ContactPage extends Component {
             <ContactForm getContacts={this.getContacts} />
           </div>
         </div>
-      </div>
+      </main>
     )
   }
 };

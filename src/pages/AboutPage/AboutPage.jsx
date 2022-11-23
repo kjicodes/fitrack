@@ -4,10 +4,10 @@ import About from '../../components/About/About';
 
 export default function AboutPage() {
   return (
-    <div>
+    <main>
       <Header />
       <Nav />
       <About />
-    </div>
+    </main>
   )
-}
+};

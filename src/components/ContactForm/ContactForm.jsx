@@ -7,7 +7,7 @@ export default class ContactForm extends Component {
     name: "",
     email: "",
     message: ""
-  }
+  };
 
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value
@@ -39,14 +39,14 @@ export default class ContactForm extends Component {
           message: ""
         })
       })
-  }
+  };
 
   render() {
     return (
       <div className="ContactForm">
         <h2>Contact Us</h2>
         <div>
-          <input 
+          <input
             name="name"
             type="text"
             value={this.state.name}
@@ -68,9 +68,7 @@ export default class ContactForm extends Component {
             placeholder="Enter Message"
           />
         </div>
-        <div>
-          <button className="waves-effect waves-light btn" onClick={this.handleSubmit}>Submit</button>
-        </div>
+        <button className="waves-effect waves-light yellow btn" onClick={this.handleSubmit}>Submit</button>
       </div>
     )
   }

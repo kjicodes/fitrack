@@ -1,22 +1,12 @@
-.NewWorkoutForm label {
-  font-weight: bold;
-}
-
 .datePicker {
   font-weight: bold;
 }
 
-#add-btn {
-  text-align: center;
+.NewWorkoutForm button {
+  color: black;
 }
 
-.btn {
-background-color: gold;
-color: black;
-}
-
-.btn:hover {
-background-color: gold;
-color: white;
+.NewWorkoutForm button:hover {
+  color: white;
 }
 

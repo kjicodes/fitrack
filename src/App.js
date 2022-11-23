@@ -21,13 +21,13 @@ export default class App extends Component {
   render() {
     return (
       <main className="App">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/workouts" element={<WorkoutsPage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="*" element={<Navigate to="/" replace />} />
-          </Routes>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/workouts" element={<WorkoutsPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
       </main>
     )
   }

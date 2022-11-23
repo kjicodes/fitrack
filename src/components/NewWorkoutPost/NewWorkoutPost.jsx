@@ -1,20 +1,28 @@
 import './NewWorkoutPost.css';
-import Card from 'react-bootstrap/Card';
+import 'semantic-ui-css/semantic.min.css'
+import { Card, Image } from 'semantic-ui-react';
+
+import HeartIcon from '../../fit-heart-icon-favicon.png';
 
 export default function NewWorkoutPost(props) {
   return (
     <div className="NewWorkoutPost">
-      <Card>
-        <Card.Header>(Date) {props.workout.date} | At: {props.workout.time}</Card.Header>
-        <Card.Body>
-          <Card.Text id="card-title">Workout: </Card.Text>
-          <Card.Text id="card-text">
-            {props.workout.type} | 
-            {props.workout.duration} mins | 
-            Next goal(s): {props.workout.comment}
-          </Card.Text>
-        </Card.Body>
-      </Card>
-  </div>
+      <div>
+        <Card>
+          <Card.Content>
+            <Image
+              floated="right"
+              size="mini"
+              src={HeartIcon}
+            />
+            <Card.Header>{props.workout.startDate}</Card.Header>
+            <Card.Meta>At {props.workout.time}</Card.Meta>
+            <Card.Description>
+              {props.workout.type} <span>| </span> {props.workout.duration} mins <span>| </span>Goal(s): {props.workout.comment}
+            </Card.Description>
+          </Card.Content>
+        </Card>
+      </div>
+    </div>
   )
 };

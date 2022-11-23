@@ -14,7 +14,7 @@ export default class NewWorkoutForm extends Component {
   };
 
   handleChange = e => {
-    this.setState({ [e.target.name]: e.target.value}) // [] - computed property syntax
+    this.setState({ [e.target.name]: e.target.value })
   };
 
   handleDateChange = date => {
@@ -56,7 +56,7 @@ export default class NewWorkoutForm extends Component {
     return (
       <div className="NewWorkoutForm">
         <div>
-          <label>DATE </label>
+          <label>Date </label>
           <DatePicker
             wrapperClassName="datePicker"
             name="startDate"
@@ -68,8 +68,9 @@ export default class NewWorkoutForm extends Component {
           />
         </div>
         <div>
-          <label>WHEN </label>
+          <label for="time">When </label>
           <input 
+            id="time"
             name="time"
             type="time"
             value={this.state.time}
@@ -77,8 +78,10 @@ export default class NewWorkoutForm extends Component {
           />
         </div>
         <div>
-          <label>WORKOUT </label>
+          <label for="type">Workout </label>
           <input 
+          type="text"
+            id="type"
             name="type"
             value={this.state.type}
             onChange={this.handleChange}
@@ -88,7 +91,7 @@ export default class NewWorkoutForm extends Component {
           />
         </div>
         <div>
-          <label>DURATION </label>
+          <label>Duration </label>
           <input 
             name="duration"
             type="number"
@@ -100,8 +103,7 @@ export default class NewWorkoutForm extends Component {
           />
         </div>
         <div>
-          <label>GOALS FOR NEXT TIME </label>
-          <br />
+          <label>Goals </label>
           <textarea
             className="materialize-textarea"
             name="comment"
@@ -112,10 +114,7 @@ export default class NewWorkoutForm extends Component {
             pattern=".{2,}"            
           />
         </div>
-        <br />
-        <div id="add-btn">
-          <button className="waves-effect waves-light btn" onClick={this.handleSubmit}>Add Workout</button>
-        </div>
+        <button class="waves-effect waves-light yellow btn" onClick={this.handleSubmit}>Add Workout</button>
       </div>
     )
   }

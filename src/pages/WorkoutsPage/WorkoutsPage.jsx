@@ -13,20 +13,18 @@ export default class WorkoutsPage extends Component {
   };
 
   getWorkouts = async () => {
-    await fetch("/api/workouts") // fetch call
-    .then(res => res.json()) // initial fetch then returns a response obj (res), then we call json on it which will PULL the json body out of our response
-    .then(workouts => this.setState({ workouts })) // then data we get back (workouts)
+    await fetch("/api/workouts")
+    .then(res => res.json())
+    .then(workouts => this.setState({ workouts })) 
   };
 
-  // need to call getWorkouts()
-  // once component mounts, then we can fetch data from db
   componentDidMount() {
     this.getWorkouts()
   };
 
   render() {
     return (
-      <div>
+      <main>
         <Header />
         <Nav />
         <div className="WorkoutsPage">
@@ -39,13 +37,13 @@ export default class WorkoutsPage extends Component {
             <h2>My Workouts</h2>
             {this.state.workouts.length ?
               this.state.workouts.map((w, idx) => (
-                <NewWorkoutPost key={idx} workout={w} />))
+                <NewWorkoutPost key={idx} workout={w} deleteWorkout={this.deleteWorkout} />))
               :
               <h4>No Workouts</h4>
             }
           </div>
         </div>
-      </div>
+      </main>
     )
   }
 };

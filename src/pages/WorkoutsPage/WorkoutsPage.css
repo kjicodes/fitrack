@@ -1,13 +1,19 @@
 .WorkoutsPage {
+  margin: 20px;
   display: flex;
 }
  
-.WorkoutsPage div > h2, 
-.WorkoutsPage div > h3 {
+.WorkoutsPage div > h2 {
+  padding-bottom: 10px;
   text-decoration: underline gold;
   text-align: left;
-  font-size: 30px;
   font-weight: bold;
+}
+
+.WorkoutsPage div > h3 {
+  text-align: left;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .Section {

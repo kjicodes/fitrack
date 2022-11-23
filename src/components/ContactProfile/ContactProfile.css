@@ -1,14 +1,15 @@
-.ContactProfile #div1 {
+.card {
   width: 350px;
   height: auto;
-  padding: 20px;
+  padding: 35px 0 10px 0;
 }
 
-.ContactProfile img {
+img {
   width: 100px;
   height: auto;
   text-align: center;
 }
+
 
 .ContactProfile h3 {
   font-size: 30px;
@@ -18,7 +19,11 @@
   color: grey;
 }
 
-.ContactProfile #contact-github {
+#contact-github {
   width: 30px;
   height: auto;
+}
+
+#link-github {
+  padding-top: 10px;
 }

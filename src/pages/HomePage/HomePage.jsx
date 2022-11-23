@@ -4,10 +4,10 @@ import Home from '../../components/Home/Home';
 
 export default function HomePage() {
   return (
-    <div>
+    <main>
       <Header />
       <Nav />
       <Home />
-    </div>
+    </main>
   )
-}
+};

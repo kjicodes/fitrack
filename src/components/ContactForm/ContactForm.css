@@ -3,8 +3,19 @@
 }
 
 .ContactForm h2 {
-  font-size: 30px;
   font-weight: bold;
   text-decoration: underline gold;
 }
+
+.ContactForm button {
+  color: black;
+}
+
+.ContactForm button:hover {
+  color: white;
+}
+
+
+
+
 

@@ -7,4 +7,4 @@ export default function Header(props) {
       <img src={Logo} alt="Logo"/>
     </div>
   )
-}
+};
