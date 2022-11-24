@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div className="Home">
       <h3>Track your way to optimal <span>health.</span></h3>
-      <div>
+      <div className="ListIcons">
         <ul>
           <li><img src={Schedule} alt="Schedule"/></li>
           <li><img src={Workout} alt="Workout"/></li>

@@ -15,7 +15,4 @@
   color: white;
 }
 
-.input-field input[type=text]:focus {
-  border-bottom: 1px solid gold;
-}
 
