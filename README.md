@@ -23,7 +23,6 @@ Click here to render the app on Heroku:
 
 Currently working on the app to:
 
-- Add full CRUD
 - Add user authentication
 - Add pagination for 'workouts' section
 
