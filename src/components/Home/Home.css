@@ -1,8 +1,6 @@
 .Home {
   margin: 40px;
-  margin-bottom: 30px;
   text-align: center;
-  
 }
 
 .Home h3 { 
@@ -27,6 +25,7 @@
 }
 
 .Home a {
+  margin-bottom: 40px;
   background-color: gold;
   color: black;
 }

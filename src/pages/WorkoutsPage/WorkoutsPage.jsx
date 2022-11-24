@@ -5,6 +5,7 @@ import Header from '../../components/Header/Header';
 import Nav from '../../components/Nav/Nav';
 import NewWorkoutPost from '../../components/NewWorkoutPost/NewWorkoutPost';
 import NewWorkoutForm from '../../components/NewWorkoutForm/NewWorkoutForm';
+import { Card } from 'semantic-ui-react';
 
 export default class WorkoutsPage extends Component {
 
@@ -34,12 +35,16 @@ export default class WorkoutsPage extends Component {
           <div className="Section" id="divider"></div>
           <div className="Section">
             <h2>My Workouts</h2>
-            {this.state.workouts.length ?
-              this.state.workouts.map((w, idx) => (
-                <NewWorkoutPost key={idx} workout={w} deleteWorkout={this.deleteWorkout} />))
-              :
-              <h4>No Workouts</h4>
-            }
+            <div className="Workouts">
+              <Card.Group>
+                {this.state.workouts.length ?
+                  this.state.workouts.map((w, idx) => (
+                    <NewWorkoutPost key={idx} workout={w} deleteWorkout={this.deleteWorkout} />))
+                  :
+                  <h4>No Workouts</h4>
+                }
+              </Card.Group>
+            </div>
           </div>
         </div>
       </main>

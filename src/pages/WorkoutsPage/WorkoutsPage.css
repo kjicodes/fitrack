@@ -2,7 +2,6 @@
   margin-block: 40px;
   display: flex;
   justify-content: flex-start;
-
 }
  
 .WorkoutsPage div > h2 {
@@ -10,6 +9,10 @@
   text-decoration: underline gold;
   text-align: left;
   font-weight: bold;
+}
+
+.Workouts {
+  margin-bottom: 40px;
 }
 
 #divider {
