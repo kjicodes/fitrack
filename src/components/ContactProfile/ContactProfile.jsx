@@ -6,7 +6,9 @@ import ContactGithub from '../../github.png';
 export default function ContactProfile() {
   return (
     <div className="card">
-      <img src={ContactLogo} alt="Contact Logo" />
+      <div id="profile-logo">
+        <img src={ContactLogo} alt="Contact Logo" />
+      </div>
       <div className="card-content">
         <span className="card-title">Kateleen Issa</span>
         <p>Founder & Lead Developer</p>
