@@ -29,10 +29,9 @@ export default class WorkoutsPage extends Component {
         <Nav />
         <div className="WorkoutsPage">
           <div className="Section">
-            <h3>Enter</h3>
             <NewWorkoutForm getWorkouts={this.getWorkouts} />
           </div>
-          <div id="divider"></div>
+          <div className="Section" id="divider"></div>
           <div className="Section">
             <h2>My Workouts</h2>
             {this.state.workouts.length ?

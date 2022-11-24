@@ -45,7 +45,7 @@ export default class ContactForm extends Component {
     return (
       <div className="ContactForm">
         <h2>Contact Us</h2>
-        <div>
+        <div className="Form">
           <input
             name="name"
             type="text"

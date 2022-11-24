@@ -1,6 +1,8 @@
 .WorkoutsPage {
-  margin: 20px;
+  margin-top: 40px;
   display: flex;
+  justify-content: flex-start;
+
 }
  
 .WorkoutsPage div > h2 {
@@ -10,19 +12,8 @@
   font-weight: bold;
 }
 
-.WorkoutsPage div > h3 {
-  text-align: left;
-  font-weight: bold;
-  font-size: 20px;
-}
-
-.Section {
-  margin: 0 50px;
-  padding: 20px;
-}
-
 #divider {
-  margin-top: 10px;
+  margin-inline: 40px;
   border-left: 2px solid grey;
 }
 

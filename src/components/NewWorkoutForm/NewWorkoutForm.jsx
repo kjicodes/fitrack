@@ -55,6 +55,7 @@ export default class NewWorkoutForm extends Component {
   render() {
     return (
       <div className="NewWorkoutForm">
+        <h3>Enter</h3>
         <div>
           <label>Date </label>
           <DatePicker

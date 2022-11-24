@@ -1,18 +1,35 @@
-.nav-wrapper {
+.Nav nav {
   background-color: white; 
 }
+.nav-menu {
+  text-align: center;
+}
 
-.nav-wrapper ul {
+.main-nav {
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} 
 
-.nav-wrapper a {
+.container a {
   color: black; 
 }
 
-.nav-wrapper a:hover {
+.container a:hover {
+  background-color: gold;
+  color: black;
+}
+
+.material-icons {
+  color: black;
+}
+
+.material-icons:hover {
+  background-color: white;
+  color: black;
+}
+
+#slide-out li:hover {
   background-color: gold;
   color: black;
 }

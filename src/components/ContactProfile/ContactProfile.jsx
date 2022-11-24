@@ -5,10 +5,10 @@ import ContactGithub from '../../github.png';
 
 export default function ContactProfile() {
   return (
-    <div class="card">
+    <div className="card">
       <img src={ContactLogo} alt="Contact Logo" />
-      <div class="card-content">
-        <span class="card-title">Kateleen Issa</span>
+      <div className="card-content">
+        <span className="card-title">Kateleen Issa</span>
         <p>Founder & Lead Developer</p>
         <div id="link-github">
           <a href="https://github.com/kjicodes" target="_blank" rel="noreferrer">

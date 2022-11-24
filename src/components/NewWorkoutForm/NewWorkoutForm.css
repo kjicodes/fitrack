@@ -2,6 +2,11 @@
   font-weight: bold;
 }
 
+.NewWorkoutForm {
+  margin: 40px 0 0 40px;
+  width: 210px;
+}
+
 .NewWorkoutForm button {
   color: black;
 }
