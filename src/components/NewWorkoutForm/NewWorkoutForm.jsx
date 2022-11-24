@@ -81,7 +81,7 @@ export default class NewWorkoutForm extends Component {
         <div>
           <label for="type">Workout </label>
           <input 
-          type="text"
+            type="text"
             id="type"
             name="type"
             value={this.state.type}
