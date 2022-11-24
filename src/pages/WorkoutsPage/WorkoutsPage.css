@@ -13,7 +13,7 @@
 }
 
 #divider {
-  margin-inline: 40px;
+  margin: 0 40px 40px 40px;
   border-left: 2px solid grey;
 }
 
