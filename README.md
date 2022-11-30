@@ -24,7 +24,7 @@ Click here to render the app on Heroku:
 Currently working on the app to:
 
 - Add user authentication
-- Add pagination for 'workouts' section
+
 
 
 
