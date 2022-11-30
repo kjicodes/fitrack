@@ -5,6 +5,9 @@ import { Card, Image } from 'semantic-ui-react';
 import HeartIcon from '../../fit-heart-icon-favicon.png';
 
 export default function NewWorkoutPost(props) {
+
+  let todaysDate = (new Date()).toLocaleDateString()
+
   return (
     <div className="NewWorkoutPost">
       <Card color="yellow">
@@ -14,7 +17,7 @@ export default function NewWorkoutPost(props) {
             size="mini"
             src={HeartIcon}
           />
-          <Card.Header>{props.workout.startDate}</Card.Header>
+          <Card.Header>{todaysDate}</Card.Header>
           <Card.Meta>At {props.workout.time}</Card.Meta>
           <Card.Description>
             {props.workout.type} <span>| </span> {props.workout.duration} mins <span>| </span>Goal(s): {props.workout.comment}

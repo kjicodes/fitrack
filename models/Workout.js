@@ -2,10 +2,6 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const workoutSchema = new Schema({
-  startDate: {
-    type: String,
-    required: true
-  },
   time: String,
   type: {
     type: String,

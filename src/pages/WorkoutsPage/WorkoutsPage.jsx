@@ -1,11 +1,11 @@
 import { Component } from 'react';
 import './WorkoutsPage.css';
+import { Card } from 'semantic-ui-react';
 
 import Header from '../../components/Header/Header';
 import Nav from '../../components/Nav/Nav';
 import NewWorkoutPost from '../../components/NewWorkoutPost/NewWorkoutPost';
 import NewWorkoutForm from '../../components/NewWorkoutForm/NewWorkoutForm';
-import { Card } from 'semantic-ui-react';
 
 export default class WorkoutsPage extends Component {
 
@@ -39,7 +39,7 @@ export default class WorkoutsPage extends Component {
               <Card.Group>
                 {this.state.workouts.length ?
                   this.state.workouts.map((w, idx) => (
-                    <NewWorkoutPost key={idx} workout={w} deleteWorkout={this.deleteWorkout} />))
+                    <NewWorkoutPost key={idx} workout={w} />))
                   :
                   <h4>No Workouts</h4>
                 }

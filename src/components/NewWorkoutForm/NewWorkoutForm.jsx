@@ -1,12 +1,10 @@
 import { Component } from 'react';
 import './NewWorkoutForm.css';
-import "react-datepicker/dist/react-datepicker.css";
-import DatePicker from 'react-datepicker';
+
 
 export default class NewWorkoutForm extends Component {
 
   state = {
-    startDate: new Date(),
     time: "",
     type: "",
     duration: "",
@@ -17,72 +15,51 @@ export default class NewWorkoutForm extends Component {
     this.setState({ [e.target.name]: e.target.value })
   };
 
-  handleDateChange = date => {
-    this.setState({ startDate: date })
-  };
-
   handleSubmit = async () => {
-    let body = { 
-      startDate: this.state.startDate,
-      time: this.state.time,
-      type: this.state.type,
-      duration: this.state.duration,
-      comment: this.state.comment
-    };
-
-    let options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(body)
-    };
-
-    await fetch("/api/workouts", options)
-      .then(res => res.json())
-      .then(data => {
-        this.props.getWorkouts();
-        this.setState({ 
-          startDate: "",
-          time: "",
-          type: "",
-          duration: "",
-          comment: ""
+    try {
+      let fetchResponse = await fetch("/api/workouts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          time: this.state.time,
+          type: this.state.type,
+          duration: this.state.duration,
+          comment: this.state.comment
         })
       })
+      let serverResponse = await fetchResponse.json()
+      console.log("Success: ", serverResponse)
+      this.props.getWorkouts()
+      this.setState({ 
+        time: "",
+        type: "",
+        duration: "",
+        comment: ""
+      })
+    } catch (err) {
+      console.log("Error: ", err)
+    }
   };
 
   render() {
     return (
       <div className="NewWorkoutForm">
-        <h3>Enter</h3>
+        <h3>Enter </h3>
+        <p>(For Today)</p>
         <div>
-          <label>Date </label>
-          <DatePicker
-            wrapperClassName="datePicker"
-            name="startDate"
-            selected={this.state.startDate}
-            dateFormat="dd/MM/yyyy"
-            popperPlacement="bottom-end"
-            onChange={this.handleDateChange}
-            required
-          />
-        </div>
-        <div>
-          <label for="time">When </label>
+          <label>Time </label>
           <input 
-            id="time"
             name="time"
-            type="time"
-            value={this.state.time}
+            value={this.state.time} 
             onChange={this.handleChange}
+            placeholder="Enter hour:minute AM/PM"
+            required
+            pattern=".{2,}"
           />
         </div>
         <div>
-          <label for="type">Workout </label>
+          <label>Workout </label>
           <input 
-            type="text"
-            id="type"
             name="type"
             value={this.state.type}
             onChange={this.handleChange}
@@ -115,7 +92,7 @@ export default class NewWorkoutForm extends Component {
             pattern=".{2,}"            
           />
         </div>
-        <button class="waves-effect waves-light yellow btn" onClick={this.handleSubmit}>Add Workout</button>
+        <button className="waves-effect waves-light yellow btn" onClick={this.handleSubmit}>Add Workout</button>
       </div>
     )
   }

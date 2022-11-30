@@ -2,11 +2,11 @@ import { Component } from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
 import './App.css';
 
-import HomePage from './pages/HomePage/HomePage';
-import WorkoutsPage from './pages/WorkoutsPage/WorkoutsPage';
-import AboutPage from './pages/AboutPage/AboutPage';
-import ContactPage from './pages/ContactPage/ContactPage';
-import AuthPage from './pages/AuthPage/AuthPage';
+import HomePage from '../HomePage/HomePage';
+import WorkoutsPage from '../WorkoutsPage/WorkoutsPage';
+import AboutPage from '../AboutPage/AboutPage';
+import ContactPage from '../ContactPage/ContactPage';
+import AuthPage from '../AuthPage/AuthPage';
 
 export default class App extends Component {
 

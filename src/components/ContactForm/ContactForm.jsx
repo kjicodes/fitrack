@@ -15,31 +15,29 @@ export default class ContactForm extends Component {
   };
 
   handleSubmit = async () => {
-    let body = { 
-      name: this.state.name,
-      email: this.state.email,
-      message: this.state.message
-    };
-
-    let options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(body)
-    };
-
-    await fetch("/api/contact", options)
-      .then(res => res.json())
-      .then(data => {
-        this.props.getContacts();
-        this.setState({ 
-          name: "",
-          email: "",
-          message: ""
+    try {
+      let fetchResponse = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: this.state.name,
+          email: this.state.email,
+          message: this.state.message
         })
       })
+      let serverResponse = await fetchResponse.json()
+      console.log("Success: ", serverResponse)
+      this.props.getContacts()
+      this.setState({ 
+        name: "",
+        email: "",
+        message: ""
+      })
+    } catch (err) {
+      console.log("Error: ", err)
+    }
   };
+  
 
   render() {
     return (
