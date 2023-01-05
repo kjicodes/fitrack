@@ -63,6 +63,7 @@ export default class NewWorkoutForm extends Component {
             selected={this.state.startDate} 
             onChange={this.handleDateChange}
             dateFormat="MM/dd/yyyy"
+            placeholder="Enter date"
             popperPlacement="top-end"
             required
           />
