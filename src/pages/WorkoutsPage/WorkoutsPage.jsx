@@ -23,6 +23,11 @@ export default class WorkoutsPage extends Component {
     this.getWorkouts()
   };
 
+  // async componentDidMount() {
+  //   let workouts = await fetch("/api/workouts").then(res => res.json())
+  //   this.setState({ workouts })
+  // }
+
   render() {
     return (
       <main>

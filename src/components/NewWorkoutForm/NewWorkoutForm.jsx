@@ -1,10 +1,14 @@
 import { Component } from 'react';
 import './NewWorkoutForm.css';
 
+import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
+
 
 export default class NewWorkoutForm extends Component {
 
   state = {
+    startDate: new Date(),
     time: "",
     type: "",
     duration: "",
@@ -15,12 +19,17 @@ export default class NewWorkoutForm extends Component {
     this.setState({ [e.target.name]: e.target.value })
   };
 
+  handleDateChange = date => {
+    this.setState({ startDate: date })
+  };
+
   handleSubmit = async () => {
     try {
       let fetchResponse = await fetch("/api/workouts", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          startDate: this.state.startDate,
           time: this.state.time,
           type: this.state.type,
           duration: this.state.duration,
@@ -31,6 +40,7 @@ export default class NewWorkoutForm extends Component {
       console.log("Success: ", serverResponse)
       this.props.getWorkouts()
       this.setState({ 
+        startDate: "",
         time: "",
         type: "",
         duration: "",
@@ -45,14 +55,25 @@ export default class NewWorkoutForm extends Component {
     return (
       <div className="NewWorkoutForm">
         <h3>Enter </h3>
-        <p>(For Today)</p>
+        <div>
+          <label>Date </label>
+          <DatePicker
+            className="datePicker"
+            name="startDate"
+            selected={this.state.startDate} 
+            onChange={this.handleDateChange}
+            dateFormat="MM/dd/yyyy"
+            popperPlacement="top-end"
+            required
+          />
+        </div>
         <div>
           <label>Time </label>
           <input 
             name="time"
             value={this.state.time} 
             onChange={this.handleChange}
-            placeholder="Enter hour:minute AM/PM"
+            placeholder="Enter time"
             required
             pattern=".{2,}"
           />

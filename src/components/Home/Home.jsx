@@ -15,13 +15,13 @@ export default function Home() {
       <h3>Track your way to optimal <span>health.</span></h3>
       <div className="ListIcons">
         <ul>
-          <li><img src={Schedule} alt="Schedule"/></li>
-          <li><img src={Workout} alt="Workout"/></li>
-          <li><img src={WeightLifting} alt="WeightLifting"/></li>
-          <li><img src={Jogging} alt="Jogging"/></li>
-          <li><img src={Yoga} alt="Yoga"/></li>
-          <li><img src={Team} alt="Team"/></li>
-          <li><img src={Health} alt="Health" /></li>
+          <li><img src={Schedule} alt="Schedule" draggable={false} /></li>
+          <li><img src={Workout} alt="Workout" draggable={false} /></li>
+          <li><img src={WeightLifting} alt="WeightLifting" draggable={false} /></li>
+          <li><img src={Jogging} alt="Jogging" draggable={false} /></li>
+          <li><img src={Yoga} alt="Yoga" draggable={false} /></li>
+          <li><img src={Team} alt="Team" draggable={false} /></li>
+          <li><img src={Health} alt="Health" draggable={false} /></li>
         </ul>
       </div>
       <Link className="waves-effect waves-light btn" to="/workouts">
