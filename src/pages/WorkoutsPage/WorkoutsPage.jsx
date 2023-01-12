@@ -19,14 +19,15 @@ export default class WorkoutsPage extends Component {
     .then(workouts => this.setState({ workouts })) 
   };
 
+  handleDelete = (id) => {
+    let copy = [...this.state.workouts];
+    copy.splice(id, 1);
+    this.setState({ workouts: copy})
+  };
+
   componentDidMount() {
     this.getWorkouts()
   };
-
-  // async componentDidMount() {
-  //   let workouts = await fetch("/api/workouts").then(res => res.json())
-  //   this.setState({ workouts })
-  // }
 
   render() {
     return (
@@ -44,7 +45,7 @@ export default class WorkoutsPage extends Component {
               <Card.Group>
                 {this.state.workouts.length ?
                   this.state.workouts.map((w, idx) => (
-                    <NewWorkoutPost key={idx} workout={w} />))
+                    <NewWorkoutPost key={idx} workout={w} handleDelete={this.handleDelete} />))
                   :
                   <h4>No Workouts</h4>
                 }

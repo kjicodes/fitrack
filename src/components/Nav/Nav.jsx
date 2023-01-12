@@ -4,6 +4,7 @@ import './Nav.css';
 import 'materialize-css/dist/css/materialize.min.css';
 
 import M from 'materialize-css/dist/js/materialize.min.js';
+import Footer from '../../components/Footer/Footer';
 
 
 export default class Nav extends Component {
@@ -41,21 +42,30 @@ export default class Nav extends Component {
             </ul>
           </div>
         </nav>
+
   
-        <ul id="slide-out" className="sidenav">
-          <li>
-            <NavLink to="/home">HOME</NavLink>
-          </li>
-          <li>
-            <NavLink to="/workouts">WORKOUTS</NavLink>
-          </li>
-          <li>
-            <NavLink to="/about">ABOUT</NavLink>
-          </li>
-          <li>
-            <NavLink to="/contact">CONTACT</NavLink>
-          </li>
-        </ul>
+        <div id="slide-out" className="sidenav">
+          <ul>
+            <li>
+              <NavLink to="/home">HOME</NavLink>
+            </li>
+            <li>
+              <NavLink to="/workouts">WORKOUTS</NavLink>
+            </li>
+            <li>
+              <NavLink to="/about">ABOUT</NavLink>
+            </li>
+            <li>
+              <NavLink to="/contact">CONTACT</NavLink>
+            </li>
+          </ul>
+
+          <div>
+            <Footer />
+          </div>
+        </div>
+
+
       </div>
     )
   }
