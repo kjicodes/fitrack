@@ -18,12 +18,8 @@
 
 Click here to render the app on Heroku:
 
-[Go to FITrack](https://fitrk.herokuapp.com)
+[Go to FITrack](https://fittrack6-574789074350.herokuapp.com/)
 
-
-Currently working on the app to:
-
-- Add user authentication
 
 
 
